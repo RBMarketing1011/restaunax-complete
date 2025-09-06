@@ -1,0 +1,97 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id            String    @id @default(cuid())
+  email         String    @unique
+  name          String?
+  password      String
+  emailVerified DateTime?
+  image         String?
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
+
+  // Account relations
+  ownedAccounts Account[] @relation("AccountOwner")
+  accountId     String?
+  account       Account?  @relation("AccountUsers", fields: [accountId], references: [id])
+
+  @@map("users")
+}
+
+model VerificationToken {
+  identifier String
+  token      String   @unique
+  expires    DateTime
+
+  @@unique([identifier, token])
+  @@map("verificationtokens")
+}
+
+model Account {
+  id        String   @id @default(cuid())
+  name      String? // Will be set on first login
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  // Relations
+  owner   User   @relation("AccountOwner", fields: [ownerId], references: [id])
+  ownerId String
+
+  users  User[]  @relation("AccountUsers")
+  orders Order[]
+
+  @@map("accounts")
+}
+
+model Order {
+  id           String      @id @default(cuid())
+  customerName String
+  orderType    OrderType
+  status       OrderStatus
+  total        Float
+  createdAt    DateTime    @default(now())
+  updatedAt    DateTime    @updatedAt
+
+  // Relations
+  items     OrderItem[]
+  account   Account     @relation(fields: [accountId], references: [id])
+  accountId String
+
+  @@map("orders")
+}
+
+model OrderItem {
+  id       String @id @default(cuid())
+  name     String
+  quantity Int
+  price    Float
+  order    Order  @relation(fields: [orderId], references: [id], onDelete: Cascade)
+  orderId  String
+
+  @@map("order_items")
+}
+
+enum OrderType {
+  delivery
+  pickup
+}
+
+enum OrderStatus {
+  pending
+  preparing
+  ready
+  delivered
+}
