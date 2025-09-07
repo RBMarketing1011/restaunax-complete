@@ -294,18 +294,6 @@ npm run studio       # Open Prisma Studio
 
 ### If you have issues with profile after switching from standalone to microservices or visa versa it is because of the NextAuth cookie present for authentication. Please log out of the app before switching app type to avoid this issue
 
-## 🚀 Production Deployment
-
-### Standalone (Vercel/Netlify)
-- Deploy the `frontend` folder
-- Configure environment variables in your platform
-- Database migrations run automatically on build
-
-### Microservices (Docker/Cloud)
-- Deploy backend and frontend separately
-- Use environment variables to connect services
-- Consider using container orchestration
-
 ## � Challenges Faced
 
 ### Framework Architecture Decision
