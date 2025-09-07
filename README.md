@@ -52,6 +52,10 @@ The frontend can run as a complete standalone application with built-in API rout
 
 4. **Setup Database**
    ```bash
+   npx prisma db push
+   ```
+   **If Prisma didnt auto generate**
+   ```bash
    npx prisma generate
    ```
 
