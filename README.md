@@ -165,7 +165,7 @@ For production or when you need separate backend services.
    EMAIL_FROM="RestauNax Support <your-email@gmail.com>"
 
    # Application
-   CORS_ORIGIN="http://localhost:3000"
+   CORS_ORIGIN="http://localhost:3000" # Your frontend url
 
    # Development
    DEBUG="true"
