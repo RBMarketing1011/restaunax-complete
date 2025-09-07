@@ -146,41 +146,6 @@ npm run db:studio    # Open Prisma Studio
 3. Remove or comment out `DATABASE_URL` and `EMAIL_*` variables
 4. Restart the development server
 
-## 🚀 Production Deployment
-
-### Vercel (Recommended)
-1. Connect your GitHub repository to Vercel
-2. Configure environment variables in Vercel dashboard
-3. Deploy automatically on push to main branch
-
-### Netlify
-1. Connect repository to Netlify
-2. Build command: `npm run build`
-3. Publish directory: `.next`
-4. Configure environment variables
-
-### Docker
-```dockerfile
-FROM node:18-alpine
-WORKDIR /app
-COPY package*.json ./
-RUN npm ci --only=production
-COPY . .
-RUN npm run build
-EXPOSE 3000
-CMD ["npm", "start"]
-```
-
-## 📋 Features
-
-- **Order Management**: Create, view, update, and track orders
-- **User Authentication**: Email verification and secure login
-- **Dashboard Analytics**: Order statistics and trends
-- **Responsive Design**: Mobile-first Material UI components
-- **Real-time Updates**: Live order status tracking
-- **Account Management**: Multi-user restaurant accounts
-- **Data Seeding**: Development data generation tools
-
 ## 🛡️ Security Features
 
 - **NextAuth.js**: Secure authentication system
