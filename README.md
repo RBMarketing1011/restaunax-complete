@@ -51,7 +51,6 @@ The frontend can run as a complete standalone application with built-in API rout
 4. **Setup Database**
    ```bash
    npx prisma generate
-   npx prisma migrate dev
    ```
 
 5. **Run Development Server**
@@ -90,7 +89,7 @@ For production or when you need separate backend services.
    PORT="8081"
    DATABASE_URL="postgresql://username:password@localhost:5432/restaunax"
    JWT_SECRET="your-secret-key-here"
-   AUTH_KEY="your-auth-key-here"
+   AUTH_KEY="your-auth-key-here" //MUST MATCH FRONTEND AUTH KEY
    EMAIL_SERVER_USER="your-email@gmail.com"
    EMAIL_SERVER_PASSWORD="your-app-password"
    EMAIL_SERVER_HOST="smtp.gmail.com"
@@ -102,7 +101,6 @@ For production or when you need separate backend services.
 4. **Setup Database & Start**
    ```bash
    npx prisma generate
-   npx prisma migrate dev
    npm run dev
    ```
 
@@ -149,29 +147,6 @@ For production or when you need separate backend services.
 - `AUTH_KEY` - API key for frontend authentication
 - `EMAIL_SERVER_*` - SMTP settings
 - `CORS_ORIGIN` - Allowed frontend origins
-
-## 📁 Project Structure
-
-```
-restaunax-complete/
-├── frontend/                 # Next.js application
-│   ├── src/
-│   │   ├── app/             # App router pages & API routes
-│   │   ├── components/      # React components
-│   │   ├── lib/            # Utilities & configurations
-│   │   └── types/          # TypeScript definitions
-│   ├── prisma/             # Database schema (standalone mode)
-│   └── package.json
-├── backend/                 # Node.js/Express API (optional)
-│   ├── src/
-│   │   ├── controllers/    # API controllers
-│   │   ├── middleware/     # Express middleware
-│   │   ├── routes/         # API routes
-│   │   └── utils/          # Utilities
-│   ├── prisma/             # Database schema
-│   └── package.json
-└── README.md               # This file
-```
 
 ## 🛠️ Development Commands
 
@@ -227,21 +202,22 @@ npm run studio       # Open Prisma Studio
 - Use environment variables to connect services
 - Consider using container orchestration
 
-## 🤝 Contributing
+## � Challenges Faced
 
-1. Fork the repository
-2. Create a feature branch
-3. Make your changes
-4. Test both standalone and microservices modes
-5. Submit a pull request
+### Framework Architecture Decision
 
-## 📝 License
+The biggest challenge during development was determining the right framework and architecture approach. Initially, I chose Next.js because it allows building both frontend React and backend Node.js seamlessly with no issues, getting the application up and running as quickly as possible.
+
+However, partway through development, I noticed the requirement mentioning "Successful connection between frontend and backend," which made me think you wanted a separated Node.js backend for frontend microservice architecture. This led me to refactor the application to make the frontend capable of using the backend as a separate service.
+
+Then, while looking at your website, I noticed the Vite logo and thought, "Dang, maybe they wanted this built with the Vite framework!" But by that point, I already had most of the Next.js frontend up and running, so I decided to continue with Next.js and complete the implementation.
+
+**Solution**: I ended up building a flexible architecture that supports both approaches:
+- **Standalone Mode**: Complete Next.js full-stack application 
+- **Microservices Mode**: Separate frontend and backend with configurable API endpoints
+
+This dual approach actually turned out to be beneficial, as it gives maximum deployment flexibility regardless of the preferred architecture.
+
+## �📝 License
 
 MIT License - see LICENSE file for details
-
-## 🆘 Support
-
-For issues and questions:
-- Check the existing issues on GitHub
-- Create a new issue with detailed description
-- Include environment details and error messages
