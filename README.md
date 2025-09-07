@@ -279,7 +279,7 @@ npm run studio       # Open Prisma Studio
 1. Set up the backend following the microservices setup
 2. Update `frontend/.env`:
    ```env
-   NEXT_PUBLIC_API_BASE_URL="http://localhost:8081"
+   NEXT_PUBLIC_API_BASE_URL="your-backend-base-url"
    NEXT_PUBLIC_AUTH_KEY="your-backend-auth-key"
    ```
 3. Restart the frontend
@@ -287,7 +287,7 @@ npm run studio       # Open Prisma Studio
 ### From Microservices to Standalone
 1. Change to your frontend url in `frontend/.env`:
    ```env
-   # NEXT_PUBLIC_API_BASE_URL="http://localhost:8081"
+   NEXT_PUBLIC_API_BASE_URL="your-frontend-base-url"
    ```
 2. Ensure frontend has `DATABASE_URL` configured
 3. Restart the frontend
