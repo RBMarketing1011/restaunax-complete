@@ -69,8 +69,7 @@ The frontend can run as a complete standalone application with built-in API rout
    - Frontend: http://localhost:3000
    - Prisma Studio: `npm run db:studio`
 
-6. **Seeding Database**<br/>
-   To seed database follow these steps
+6. **Seeding Database** - follow these steps
    - sign up, verify email, log in
    - once logged in navigate to /profile or click user info in bottom of sidebar and select profile on popup
    - scroll down to "Account Management" section
