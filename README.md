@@ -294,6 +294,8 @@ npm run studio       # Open Prisma Studio
 
 ### If you have issues with profile after switching from standalone to microservices or visa versa it is because of the NextAuth cookie present for authentication. Please log out of the app before switching app type to avoid this issue
 
+---
+
 ## � Challenges Faced
 
 ### Framework Architecture Decision
