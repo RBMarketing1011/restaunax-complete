@@ -81,7 +81,7 @@ if (process.env.NODE_ENV === 'development')
 app.get('/', (_req: Request, res: Response) =>
 {
   res.json({
-    message: 'RestaunaX Backend API',
+    message: 'RestauNax Backend API',
     version: '1.0.0',
     documentation: '/api/health'
   })

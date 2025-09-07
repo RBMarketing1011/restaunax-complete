@@ -17,18 +17,18 @@ export const sendVerificationEmail = async (email: string, token: string) =>
   const mailOptions = {
     from: process.env.EMAIL_FROM,
     to: email,
-    subject: 'Verify your RestaunaX account',
+    subject: 'Verify your RestauNax account',
     html: `
       <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px;">
         <div style="text-align: center; margin-bottom: 30px;">
-          <h1 style="color: #1976d2; margin: 0;">RestaunaX</h1>
+          <h1 style="color: #1976d2; margin: 0;">RestauNax</h1>
           <p style="color: #666; margin: 5px 0 0 0;">Restaurant Order Management</p>
         </div>
         
         <div style="background-color: #f5f5f5; padding: 30px; border-radius: 10px; margin-bottom: 30px;">
           <h2 style="color: #333; margin: 0 0 20px 0;">Verify Your Email Address</h2>
           <p style="color: #666; line-height: 1.6; margin: 0 0 20px 0;">
-            Thank you for signing up for RestaunaX! Please click the button below to verify your email address and activate your account.
+            Thank you for signing up for RestauNax! Please click the button below to verify your email address and activate your account.
           </p>
           
           <div style="text-align: center; margin: 30px 0;">
@@ -46,7 +46,7 @@ export const sendVerificationEmail = async (email: string, token: string) =>
         
         <div style="text-align: center; color: #999; font-size: 12px;">
           <p>This verification link will expire in 24 hours.</p>
-          <p>If you didn't create an account with RestaunaX, you can safely ignore this email.</p>
+          <p>If you didn't create an account with RestauNax, you can safely ignore this email.</p>
         </div>
       </div>
     `,
@@ -69,18 +69,18 @@ export const sendWelcomeEmail = async (email: string, name: string) =>
   const mailOptions = {
     from: process.env.EMAIL_FROM,
     to: email,
-    subject: 'Welcome to RestaunaX!',
+    subject: 'Welcome to RestauNax!',
     html: `
       <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px;">
         <div style="text-align: center; margin-bottom: 30px;">
-          <h1 style="color: #1976d2; margin: 0;">RestaunaX</h1>
+          <h1 style="color: #1976d2; margin: 0;">RestauNax</h1>
           <p style="color: #666; margin: 5px 0 0 0;">Restaurant Order Management</p>
         </div>
         
         <div style="background-color: #f5f5f5; padding: 30px; border-radius: 10px; margin-bottom: 30px;">
-          <h2 style="color: #333; margin: 0 0 20px 0;">Welcome to RestaunaX, ${ name }!</h2>
+          <h2 style="color: #333; margin: 0 0 20px 0;">Welcome to RestauNax, ${ name }!</h2>
           <p style="color: #666; line-height: 1.6; margin: 0 0 20px 0;">
-            Your email has been verified successfully! You can now access your RestaunaX dashboard and start managing your restaurant orders.
+            Your email has been verified successfully! You can now access your RestauNax dashboard and start managing your restaurant orders.
           </p>
           
           <div style="text-align: center; margin: 30px 0;">
@@ -91,7 +91,7 @@ export const sendWelcomeEmail = async (email: string, name: string) =>
           </div>
           
           <div style="background-color: white; padding: 20px; border-radius: 5px; margin: 20px 0;">
-            <h3 style="color: #333; margin: 0 0 15px 0;">What you can do with RestaunaX:</h3>
+            <h3 style="color: #333; margin: 0 0 15px 0;">What you can do with RestauNax:</h3>
             <ul style="color: #666; line-height: 1.6; margin: 0; padding-left: 20px;">
               <li>Track and manage orders in real-time</li>
               <li>Update order statuses with one click</li>
@@ -102,7 +102,7 @@ export const sendWelcomeEmail = async (email: string, name: string) =>
         </div>
         
         <div style="text-align: center; color: #999; font-size: 12px;">
-          <p>Thank you for choosing RestaunaX for your restaurant management needs!</p>
+          <p>Thank you for choosing RestauNax for your restaurant management needs!</p>
         </div>
       </div>
     `,

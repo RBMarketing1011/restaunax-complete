@@ -25,10 +25,10 @@ export const sendVerificationEmail = async (email: string, name: string, verific
     const mailOptions = {
       from: process.env.EMAIL_FROM,
       to: email,
-      subject: 'Verify your RestaunaX account',
+      subject: 'Verify your RestauNax account',
       html: `
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
-          <h2 style="color: #333;">Welcome to RestaunaX, ${ name }!</h2>
+          <h2 style="color: #333;">Welcome to RestauNax, ${ name }!</h2>
           <p>Thank you for creating an account with us. Please click the button below to verify your email address:</p>
           <div style="text-align: center; margin: 30px 0;">
             <a href="${ verificationUrl }" style="background-color: #007bff; color: white; padding: 12px 30px; text-decoration: none; border-radius: 5px; font-weight: bold;">Verify Email</a>
@@ -63,7 +63,7 @@ export const sendPasswordResetEmail = async (email: string, name: string, resetT
     const mailOptions = {
       from: process.env.EMAIL_FROM,
       to: email,
-      subject: 'Reset your RestaunaX password',
+      subject: 'Reset your RestauNax password',
       html: `
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
           <h2 style="color: #333;">Password Reset Request</h2>

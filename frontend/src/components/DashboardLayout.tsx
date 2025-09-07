@@ -69,7 +69,7 @@ export default function DashboardLayout ({ children, title, mobileActions }: Das
                 <MenuIcon />
               </IconButton>
               <Typography variant="h6" noWrap component="div" sx={ { flexGrow: 1 } }>
-                { title || 'RestaunaX' }
+                { title || 'RestauNax' }
               </Typography>
               { mobileActions }
             </Toolbar>

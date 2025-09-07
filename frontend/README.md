@@ -1,4 +1,4 @@
-# RestaunaX - Restaurant Order Management
+# RestauNax - Restaurant Order Management
 
 A modern restaurant order management dashboard built with Next.js, TypeScript, Material UI, and PostgreSQL.
 

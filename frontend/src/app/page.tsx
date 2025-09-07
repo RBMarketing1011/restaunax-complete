@@ -51,7 +51,7 @@ export default function LandingPage ()
       <AppBar position="static" sx={ { bgcolor: 'white', color: 'black', boxShadow: 1 } }>
         <Toolbar>
           <Typography variant="h6" component="div" sx={ { flexGrow: 1, fontWeight: 'bold', color: '#ff6b35' } }>
-            RestaunaX
+            RestauNax
           </Typography>
           <Box sx={ { display: 'flex', gap: 2 } }>
             <Button
@@ -87,7 +87,7 @@ export default function LandingPage ()
       >
         <Container maxWidth="md">
           <Typography variant="h2" component="h1" fontWeight="bold" mb={ 2 }>
-            RestaunaX
+            RestauNax
           </Typography>
           <Typography variant="h5" mb={ 4 } sx={ { opacity: 0.9 } }>
             Streamline your restaurant operations with our powerful order management dashboard
@@ -129,7 +129,7 @@ export default function LandingPage ()
       {/* Features Section */ }
       <Container maxWidth="lg" sx={ { py: 8, bgcolor: 'white' } }>
         <Typography variant="h3" textAlign="center" mb={ 2 } fontWeight="bold" sx={ { color: 'black' } }>
-          Why Choose RestaunaX?
+          Why Choose RestauNax?
         </Typography>
         <Typography variant="h6" textAlign="center" mb={ 6 } sx={ { color: '#666666' } }>
           Everything you need to manage your restaurant orders efficiently
@@ -190,7 +190,7 @@ export default function LandingPage ()
             Ready to get started?
           </Typography>
           <Typography variant="h6" mb={ 4 } sx={ { color: '#666666' } }>
-            Join thousands of restaurants already using RestaunaX
+            Join thousands of restaurants already using RestauNax
           </Typography>
           <Button
             variant="contained"
@@ -216,7 +216,7 @@ export default function LandingPage ()
           <Box sx={ { display: 'flex', flexDirection: { xs: 'column', md: 'row' }, justifyContent: 'space-between', alignItems: { xs: 'center', md: 'flex-start' }, gap: 4 } }>
             <Box sx={ { textAlign: { xs: 'center', md: 'left' } } }>
               <Typography variant="h6" fontWeight="bold" mb={ 1 } sx={ { color: 'white' } }>
-                RestaunaX
+                RestauNax
               </Typography>
               <Typography sx={ { maxWidth: 300, color: '#888888' } }>
                 Streamline your restaurant operations with our powerful order management system.
@@ -258,7 +258,7 @@ export default function LandingPage ()
 
           <Box sx={ { borderTop: '1px solid #333333', mt: 4, pt: 3, textAlign: 'center' } }>
             <Typography sx={ { color: '#888888' } } variant="body2">
-              © 2025 RestaunaX. All rights reserved.
+              © 2025 RestauNax. All rights reserved.
             </Typography>
           </Box>
         </Container>

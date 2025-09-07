@@ -107,7 +107,7 @@ function SignInForm ()
               Welcome Back
             </Typography>
             <Typography color="text.secondary">
-              Sign in to your RestaunaX account
+              Sign in to your RestauNax account
             </Typography>
           </Box>
 

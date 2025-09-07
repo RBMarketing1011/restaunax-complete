@@ -1,7 +1,7 @@
 {
   "name": "restaunax-backend",
   "version": "1.0.0",
-  "description": "RestaunaX Restaurant Management System Backend API",
+  "description": "RestauNax Restaurant Management System Backend API",
   "main": "dist/server.js",
   "scripts": {
     "build": "tsc",

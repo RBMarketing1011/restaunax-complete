@@ -130,7 +130,7 @@ export default function SignUpPage ()
               Create Account
             </Typography>
             <Typography color="text.secondary">
-              Join RestaunaX and start managing your orders
+              Join RestauNax and start managing your orders
             </Typography>
           </Box>
 

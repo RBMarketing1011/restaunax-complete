@@ -102,7 +102,7 @@ export default function Sidebar ({ mobileOpen, onMobileToggle }: SidebarProps)
       >
         <Restaurant sx={ { fontSize: 32, color: '#ff6b35' } } />
         <Typography variant="h6" fontWeight="bold" sx={ { color: '#ff6b35' } }>
-          RestaunaX
+          RestauNax
         </Typography>
         <Box sx={ { display: { xs: 'block', md: 'none' } } }>
           <IconButton

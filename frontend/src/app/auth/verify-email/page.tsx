@@ -108,7 +108,7 @@ function VerifyEmailForm ()
                 { message }
               </Typography>
               <Alert severity="success" sx={ { mb: 3 } }>
-                Your account has been successfully verified. You can now sign in and access your RestaunaX dashboard.
+                Your account has been successfully verified. You can now sign in and access your RestauNax dashboard.
               </Alert>
               <Button
                 variant="contained"

@@ -1,4 +1,4 @@
-# RestaunaX Backend API
+# RestauNax Backend API
 
 Node.js/TypeScript restaurant management API with authentication, email verification, and order management.
 

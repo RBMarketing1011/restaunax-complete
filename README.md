@@ -107,7 +107,7 @@ For production or when you need separate backend services.
    EMAIL_SERVER_PASSWORD="your-app-password"
    EMAIL_SERVER_HOST="smtp.gmail.com"
    EMAIL_SERVER_PORT="465"
-   EMAIL_FROM="RestaunaX Support <your-email@gmail.com>"
+   EMAIL_FROM="RestauNax Support <your-email@gmail.com>"
    CORS_ORIGIN="http://localhost:3000"
    ```
 
