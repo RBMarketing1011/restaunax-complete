@@ -222,7 +222,7 @@ For production or when you need separate backend services.
 ## 🌐 Environment Variables Explained
 
 ### Frontend (.env)
-- `NEXT_PUBLIC_NODE_ENV` - Environment mode (development/production)
+- `NEXT_PUBLIC_NODE_ENV` - Environment mode used to determine if to allow seeding database or not (must be development to allow seeding)
 - `NEXT_PUBLIC_API_BASE_URL` - Backend URL (microservices mode) or frontend URL (standalone mode)
 - `NEXT_PUBLIC_AUTH_KEY` - API key for backend authentication (microservices mode)
 - `DATABASE_URL` - PostgreSQL connection string (standalone mode only)
@@ -235,12 +235,12 @@ For production or when you need separate backend services.
 - `EMAIL_FROM` - Email address and name for outgoing emails
 
 ### Backend (.env)
-- `NODE_ENV` - Environment mode (development/production)
+- `NODE_ENV` - Environment mode used to determine if to allow seeding database or not (must be development to allow seeding)
 - `PORT` - Backend server port (default: 8081)
 - `DATABASE_URL` - PostgreSQL connection string
 - `JWT_SECRET` - JWT token signing key
 - `JWT_EXPIRES_IN` - JWT token expiration time (e.g., "30d")
-- `AUTH_KEY` - API key for frontend authentication (must match frontend)
+- `AUTH_KEY` - API key for frontend authentication (must match frontend NEXT_PUBLIC_API_BASE_URL variable)
 - `EMAIL_SERVER_USER` - SMTP email username
 - `EMAIL_SERVER_PASSWORD` - SMTP email app password
 - `EMAIL_SERVER_HOST` - SMTP server hostname
