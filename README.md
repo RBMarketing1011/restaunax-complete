@@ -41,14 +41,24 @@ The frontend can run as a complete standalone application with built-in API rout
    
    Edit `.env` with your database and email settings:
    ```env
+   NEXT_PUBLIC_NODE_ENV="development"
+
+   NEXT_PUBLIC_API_BASE_URL="http://localhost:3000"
+   NEXT_PUBLIC_AUTH_KEY="your-api-key-here"
+
+   # Database Configuration
    DATABASE_URL="postgresql://username:password@localhost:5432/restaunax"
-   NEXTAUTH_SECRET="your-secret-key-here"
+
+   # NextAuth Configuration
    NEXTAUTH_URL="http://localhost:3000"
-   EMAIL_SERVER_HOST="smtp.gmail.com"
-   EMAIL_SERVER_PORT="465"
+   NEXTAUTH_SECRET="your-secret-key-here"
+
+   # Email Configuration (for verification)
    EMAIL_SERVER_USER="your-email@gmail.com"
    EMAIL_SERVER_PASSWORD="your-app-password"
-   EMAIL_FROM="your-email@gmail.com"
+   EMAIL_SERVER_HOST="smtp.provider.com"
+   EMAIL_SERVER_PORT="465" # 587 for unsecure
+   EMAIL_FROM="RestauNax Support <your-email@gmail.com>"
    ```
 
 4. **Setup Database**
