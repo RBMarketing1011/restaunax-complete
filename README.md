@@ -93,7 +93,7 @@ Add credentials to your `.env` file:
 NEXT_PUBLIC_NODE_ENV="development"
 
 NEXT_PUBLIC_API_BASE_URL="http://localhost:3000"
-NEXT_PUBLIC_AUTH_KEY="your-api-key-here"
+NEXT_PUBLIC_AUTH_KEY="same-as-backend-auth-key"
 
 # Database Configuration
 DATABASE_URL="postgresql://username:password@localhost:5432/restaunax"
@@ -155,7 +155,7 @@ For production or when you need separate backend services.
    # Authentication
    JWT_SECRET="your-secret-key-here-change-this-in-production"
    JWT_EXPIRES_IN="30d"
-   AUTH_KEY="your-auth-key-here"
+   AUTH_KEY="same-as-frontend-auth-key"
 
    # Email Configuration (for verification)
    EMAIL_SERVER_USER="your-email@gmail.com"
