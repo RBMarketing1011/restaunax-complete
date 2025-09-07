@@ -38,28 +38,6 @@ The frontend can run as a complete standalone application with built-in API rout
    ```bash
    cp .env.example .env
    ```
-   
-   Edit `.env` with your database and email settings:
-   ```env
-   NEXT_PUBLIC_NODE_ENV="development"
-
-   NEXT_PUBLIC_API_BASE_URL="http://localhost:3000"
-   NEXT_PUBLIC_AUTH_KEY="your-api-key-here"
-
-   # Database Configuration
-   DATABASE_URL="postgresql://username:password@localhost:5432/restaunax"
-
-   # NextAuth Configuration
-   NEXTAUTH_URL="http://localhost:3000"
-   NEXTAUTH_SECRET="your-secret-key-here"
-
-   # Email Configuration (for verification)
-   EMAIL_SERVER_USER="your-email@gmail.com"
-   EMAIL_SERVER_PASSWORD="your-app-password"
-   EMAIL_SERVER_HOST="smtp.provider.com"
-   EMAIL_SERVER_PORT="465" # 587 for unsecure
-   EMAIL_FROM="RestauNax Support <your-email@gmail.com>"
-   ```
 
 4. **Setup Database**
    ```bash
@@ -70,7 +48,7 @@ The frontend can run as a complete standalone application with built-in API rout
    npx prisma generate
    ```
 
-5. **Run Development Server**
+5. **Run Development Server** - see ENV Variables before launching
    ```bash
    npm run dev
    ```
@@ -117,11 +95,24 @@ This project uses [Nodemailer](https://nodemailer.com/) to send emails. Most ema
 Add credentials to your `.env` file:
 
 ```env
-EMAIL_SERVER_HOST="smtp.yourprovider.com"
-EMAIL_SERVER_PORT="465"          # 465 = SSL, 587 = STARTTLS
-EMAIL_SERVER_USER="your@email.com"
+NEXT_PUBLIC_NODE_ENV="development"
+
+NEXT_PUBLIC_API_BASE_URL="http://localhost:3000"
+NEXT_PUBLIC_AUTH_KEY="your-api-key-here"
+
+# Database Configuration
+DATABASE_URL="postgresql://username:password@localhost:5432/restaunax"
+
+# NextAuth Configuration
+NEXTAUTH_URL="http://localhost:3000"
+NEXTAUTH_SECRET="your-secret-key-here"
+
+# Email Configuration (for verification)
+EMAIL_SERVER_USER="your-email@gmail.com"
 EMAIL_SERVER_PASSWORD="your-app-password"
-EMAIL_FROM="Your Name <your@email.com>"
+EMAIL_SERVER_HOST="smtp.provider.com"
+EMAIL_SERVER_PORT="465" # 587 for unsecure
+EMAIL_FROM="RestauNax Support <your-email@gmail.com>"
 ```
 
 ## 🔧 Microservices Setup (Separate Frontend & Backend)
