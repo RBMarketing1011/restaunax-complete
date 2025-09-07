@@ -111,10 +111,10 @@ DEBUG="true"
 
 ```bash
 npm run dev          # Start development server with nodemon
-npm run build        # Compile TypeScript to dist/
-npm run start        # Start compiled server
+npm run build        # Build for production
+npm run start        # Start production server
 npm run type-check   # TypeScript type checking
-npm run migrate      # Run Prisma migrations
+npm run migrate      # Run Prisma migrations (if any)
 npm run studio       # Open Prisma Studio
 ```
 
@@ -142,11 +142,11 @@ All endpoints require the `x-api-key` header with your `AUTH_KEY` value.
 - `POST /api/orders` - Create new order
 - `GET /api/orders/:id` - Get specific order
 - `PATCH /api/orders/:id` - Update order
-- `DELETE /api/orders/:id` - Delete order
+- `DELETE /api/orders/:id` - Delete order (not used in frontend as it was not listed but still created as part of CRUD)
 
 ### System
 - `GET /api/health` - Health check
-- `POST /api/dev/reset-db` - Reset database with seed data (dev only)
+- `POST /api/dev/reset-db` - Completely reset database (dev only) - options for seeding database and deleting all data except for account and user
 
 ## 🔐 Authentication & Security
 
