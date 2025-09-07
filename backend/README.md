@@ -94,7 +94,7 @@ EMAIL_SERVER_PORT="465"
 EMAIL_FROM="RestaunaX Support <your-email@gmail.com>"
 
 # Application Security
-CORS_ORIGIN="*" # Configure specific origins for production
+CORS_ORIGIN="your-frontend-base-url" # Configure specific origins for production or use * to allow all origins if making this a public api
 
 # Development
 DEBUG="true"
