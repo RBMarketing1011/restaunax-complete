@@ -212,7 +212,7 @@ For production or when you need separate backend services.
 
    ##### Frontend `NEXT_PUBLIC_AUTH_KEY` and Backend `AUTH_KEY` need to be the exact same to work.
 
-   ##### Should have created an auth token generation system but didnt have time
+   ### Should have created an auth token generation system on the backend but didnt have time
 
 3. **Start Frontend**
    ```bash
