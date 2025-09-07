@@ -145,17 +145,30 @@ For production or when you need separate backend services.
    
    Edit `backend/.env`:
    ```env
+   # Environment Configuration
    NODE_ENV="development"
    PORT="8081"
+
+   # Database
    DATABASE_URL="postgresql://username:password@localhost:5432/restaunax"
-   JWT_SECRET="your-secret-key-here"
-   AUTH_KEY="your-auth-key-here" //MUST MATCH FRONTEND AUTH KEY
+
+   # Authentication
+   JWT_SECRET="your-secret-key-here-change-this-in-production"
+   JWT_EXPIRES_IN="30d"
+   AUTH_KEY="your-auth-key-here"
+
+   # Email Configuration (for verification)
    EMAIL_SERVER_USER="your-email@gmail.com"
    EMAIL_SERVER_PASSWORD="your-app-password"
    EMAIL_SERVER_HOST="smtp.gmail.com"
    EMAIL_SERVER_PORT="465"
    EMAIL_FROM="RestauNax Support <your-email@gmail.com>"
+
+   # Application
    CORS_ORIGIN="http://localhost:3000"
+
+   # Development
+   DEBUG="true"
    ```
 
 4. **Setup Database**
