@@ -105,9 +105,19 @@ For production or when you need separate backend services.
    CORS_ORIGIN="http://localhost:3000"
    ```
 
-4. **Setup Database & Start**
+4. **Setup Database**
+   **If this is a fresh database**
+   ```bash
+   npx prisma db push
+   ```
+   **If same database as frontend and already formatted**
+   **Or Prisma client not generated on db push**
    ```bash
    npx prisma generate
+   ```
+   
+5. **Start Server**
+   ```bash
    npm run dev
    ```
 
@@ -116,6 +126,8 @@ For production or when you need separate backend services.
 1. **Navigate to Frontend**
    ```bash
    cd frontend
+   ```
+   ```bash
    npm install
    ```
 
@@ -125,7 +137,7 @@ For production or when you need separate backend services.
    ```env
    # Point to your backend server
    NEXT_PUBLIC_API_BASE_URL="http://localhost:8081"
-   NEXT_PUBLIC_AUTH_KEY="your-auth-key-here"
+   NEXT_PUBLIC_AUTH_KEY="same-auth-key-as-backend"
    
    # NextAuth still needed for session management
    NEXTAUTH_SECRET="your-secret-key-here"
