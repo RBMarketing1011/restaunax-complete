@@ -14,7 +14,7 @@ This project supports two deployment modes:
 The frontend can run as a complete standalone application with built-in API routes.
 
 ### Prerequisites
-- Node.js 16+ 
+- Node.js 18+ 
 - PostgreSQL database
 - npm
 
@@ -69,12 +69,50 @@ The frontend can run as a complete standalone application with built-in API rout
    - Frontend: http://localhost:3000
    - Prisma Studio: `npm run db:studio`
 
-6. **Seeding Database** - follow these steps
+7. **Seeding Database** - follow these steps
    - sign up, verify email, log in
    - once logged in navigate to /profile or click user info in bottom of sidebar and select profile on popup
    - scroll down to "Account Management" section
    - the "Seed Account" button will seed the account with random orders for the last 30 days
    - the "Delete Data" button will delete all data except for the account and current user only
+
+8. 📧 Email Setup (SMTP)
+
+This project uses [Nodemailer](https://nodemailer.com/) to send emails. Most email providers require an **App Password** instead of your normal account password when connecting via SMTP.
+
+### 🔑 How to Get an App Password
+- **Gmail**  
+  1. Enable 2FA in your Google Account.  
+  2. Go to [Google App Passwords](https://myaccount.google.com/apppasswords).  
+  3. Generate a new password and copy it.  
+
+- **Zoho Mail**  
+  1. Log into [Zoho Mail](https://mail.zoho.com).  
+  2. Go to **My Account → Security → App Passwords**.  
+  3. Generate a password for “SMTP/Nodemailer.”  
+
+- **Outlook / Office 365**  
+  1. Enable 2FA in your Microsoft Account.  
+  2. Go to [App Passwords](https://account.live.com/proofs/AppPassword).  
+  3. Generate and copy the new password.  
+
+- **Other Providers**  
+  - Check your provider’s documentation for “SMTP settings” or “App Passwords.”  
+  - You’ll need: SMTP host, port, your email, and an app password.
+
+---
+
+### ⚙️ Environment Variables
+
+Add credentials to your `.env` file:
+
+```env
+EMAIL_SERVER_HOST="smtp.yourprovider.com"
+EMAIL_SERVER_PORT="465"          # 465 = SSL, 587 = STARTTLS
+EMAIL_SERVER_USER="your@email.com"
+EMAIL_SERVER_PASSWORD="your-app-password"
+EMAIL_FROM="Your Name <your@email.com>"
+```
 
 ## 🔧 Microservices Setup (Separate Frontend & Backend)
 
@@ -246,4 +284,4 @@ This dual approach actually turned out to be beneficial, as it gives maximum dep
 
 ## �📝 License
 
-MIT License - see LICENSE file for details
+MIT License
