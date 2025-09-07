@@ -257,21 +257,23 @@ npm run dev          # Start development server
 npm run build        # Build for production
 npm run start        # Start production server
 npm run lint         # Run ESLint
-npm run db:migrate   # Run Prisma migrations
+npm run db:migrate   # Run Prisma migrations (if any)
 npm run db:studio    # Open Prisma Studio
 ```
 
 ### Backend
 ```bash
 npm run dev          # Start development server with nodemon
-npm run build        # Compile TypeScript
-npm run start        # Start compiled server
+npm run build        # Build for production
+npm run start        # Start production server
 npm run type-check   # TypeScript type checking
-npm run migrate      # Run Prisma migrations
+npm run migrate      # Run Prisma migrations (if any)
 npm run studio       # Open Prisma Studio
 ```
 
 ## 🔄 Switching Between Modes
+
+#### Make sure to log out of app before switching modes to avoid issues with authentication cookie present
 
 ### From Standalone to Microservices
 1. Set up the backend following the microservices setup
@@ -283,13 +285,14 @@ npm run studio       # Open Prisma Studio
 3. Restart the frontend
 
 ### From Microservices to Standalone
-1. Remove or comment out in `frontend/.env`:
+1. Change to your frontend url in `frontend/.env`:
    ```env
    # NEXT_PUBLIC_API_BASE_URL="http://localhost:8081"
-   # NEXT_PUBLIC_AUTH_KEY="your-backend-auth-key"
    ```
 2. Ensure frontend has `DATABASE_URL` configured
 3. Restart the frontend
+
+### If you have issues with profile after switching from standalone to microservices or visa versa it is because of the NextAuth cookie present for authentication. Please log out of the app before switching app type to avoid this issue
 
 ## 🚀 Production Deployment
 
