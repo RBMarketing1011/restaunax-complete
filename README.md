@@ -1,4 +1,4 @@
-# RestaunaX - Restaurant Order Management System
+# RestauNax - Restaurant Order Management System
 
 A modern restaurant order management system built with Next.js and Node.js/Express, designed for flexibility and scalability.
 
