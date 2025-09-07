@@ -68,6 +68,12 @@ The frontend can run as a complete standalone application with built-in API rout
 6. **Access Application**
    - Frontend: http://localhost:3000
    - Prisma Studio: `npm run db:studio`
+   - To seed database follow these steps
+      - sign up, verify email, log in
+      - once logged in navigate to /profile or click user info in bottom of sidebar and select profile on popup
+      - scroll down to "Account Management" section
+      - the "Seed Account" button will seed the account with random orders for the last 30 days
+      - the "Delete Data" button will delete all data except for the account and current user only
 
 ## 🔧 Microservices Setup (Separate Frontend & Backend)
 
