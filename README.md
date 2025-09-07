@@ -222,20 +222,32 @@ For production or when you need separate backend services.
 ## 🌐 Environment Variables Explained
 
 ### Frontend (.env)
-- `DATABASE_URL` - PostgreSQL connection (standalone mode only)
-- `NEXTAUTH_SECRET` - NextAuth.js session encryption
-- `NEXTAUTH_URL` - Your application URL
-- `EMAIL_SERVER_*` - SMTP settings for email verification
-- `NEXT_PUBLIC_API_BASE_URL` - Backend URL (microservices mode)
-- `NEXT_PUBLIC_AUTH_KEY` - API key for backend auth (microservices mode)
+- `NEXT_PUBLIC_NODE_ENV` - Environment mode (development/production)
+- `NEXT_PUBLIC_API_BASE_URL` - Backend URL (microservices mode) or frontend URL (standalone mode)
+- `NEXT_PUBLIC_AUTH_KEY` - API key for backend authentication (microservices mode)
+- `DATABASE_URL` - PostgreSQL connection string (standalone mode only)
+- `NEXTAUTH_URL` - Your application URL for NextAuth
+- `NEXTAUTH_SECRET` - NextAuth.js session encryption key
+- `EMAIL_SERVER_USER` - SMTP email username
+- `EMAIL_SERVER_PASSWORD` - SMTP email app password
+- `EMAIL_SERVER_HOST` - SMTP server hostname
+- `EMAIL_SERVER_PORT` - SMTP server port (465 for SSL, 587 for TLS)
+- `EMAIL_FROM` - Email address and name for outgoing emails
 
 ### Backend (.env)
+- `NODE_ENV` - Environment mode (development/production)
 - `PORT` - Backend server port (default: 8081)
-- `DATABASE_URL` - PostgreSQL connection
+- `DATABASE_URL` - PostgreSQL connection string
 - `JWT_SECRET` - JWT token signing key
-- `AUTH_KEY` - API key for frontend authentication
-- `EMAIL_SERVER_*` - SMTP settings
-- `CORS_ORIGIN` - Allowed frontend origins
+- `JWT_EXPIRES_IN` - JWT token expiration time (e.g., "30d")
+- `AUTH_KEY` - API key for frontend authentication (must match frontend)
+- `EMAIL_SERVER_USER` - SMTP email username
+- `EMAIL_SERVER_PASSWORD` - SMTP email app password
+- `EMAIL_SERVER_HOST` - SMTP server hostname
+- `EMAIL_SERVER_PORT` - SMTP server port
+- `EMAIL_FROM` - Email address and name for outgoing emails
+- `CORS_ORIGIN` - Allowed frontend origin URL
+- `DEBUG` - Enable debug mode (true/false)
 
 ## 🛠️ Development Commands
 
