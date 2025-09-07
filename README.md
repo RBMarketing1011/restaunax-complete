@@ -23,6 +23,8 @@ The frontend can run as a complete standalone application with built-in API rout
 1. **Clone and Navigate**
    ```bash
    git clone https://github.com/RBMarketing1011/restaunax-complete.git
+   ```
+   ```bash
    cd restaunax-complete/frontend
    ```
 
