@@ -48,7 +48,7 @@ The frontend can run as a complete standalone application with built-in API rout
    npx prisma generate
    ```
 
-5. **Run Development Server** - see ENV Variables before launching
+5. **Run Development Server** - see "Email Setup (SMTP)" &  "Environment Variables" before launching
    ```bash
    npm run dev
    ```
