@@ -19,13 +19,14 @@ The frontend can run as a complete standalone application with built-in API rout
 - npm
 
 ### Setup
+ - Navigate to the folder you want the application(s) installed
 
 1. **Clone and Navigate**
    ```bash
-   git clone https://github.com/RBMarketing1011/restaunax-complete.git
+   git clone https://github.com/RBMarketing1011/restaunax-complete.git ./
    ```
    ```bash
-   cd restaunax-complete/frontend
+   cd frontend
    ```
 
 2. **Install Dependencies**
