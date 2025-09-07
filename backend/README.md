@@ -1,12 +1,10 @@
-# RestauNax Backend API
+# RestaunaX Backend API
 
-Node.js/TypeScript restaurant management API with authentication, email verification, and order management.
+Node.js/TypeScript restaurant management API service with authentication, email verification, and order management.
 
 ## 🏗️ Overview
 
-This backend can be used in two ways:
-1. **Standalone Service** - Independent API server for microservices architecture
-2. **Development Reference** - The frontend can run standalone with built-in API routes
+A standalone REST API server designed for restaurant management systems. This backend provides secure authentication, order management, and email services that can be consumed by any client application (web, mobile, or other services).
 
 ## 🚀 Quick Setup
 
@@ -31,12 +29,12 @@ This backend can be used in two ways:
 
 3. **Setup Database**
    
-   **If this is a fresh database:**
+   **For a fresh database:**
    ```bash
    npx prisma db push
    ```
    
-   **If same database as frontend and already formatted, or if Prisma client not generated on db push:**
+   **If Prisma client not generated:**
    ```bash
    npx prisma generate
    ```
@@ -49,11 +47,11 @@ This backend can be used in two ways:
 5. **Access API**
    - API Base: http://localhost:8081
    - Health Check: http://localhost:8081/api/health
-   - Prisma Studio: `npm run studio`
+   - Database Admin: `npm run studio`
 
 ## 📧 Email Setup (SMTP)
 
-This backend uses [Nodemailer](https://nodemailer.com/) for email verification. Most email providers require an **App Password** instead of your normal account password.
+This API uses [Nodemailer](https://nodemailer.com/) for email verification. Most email providers require an **App Password** instead of your normal account password.
 
 ### 🔑 How to Get an App Password
 - **Gmail**  
@@ -86,25 +84,25 @@ DATABASE_URL="postgresql://username:password@localhost:5432/restaunax"
 # Authentication
 JWT_SECRET="your-secret-key-here-change-this-in-production"
 JWT_EXPIRES_IN="30d"
-AUTH_KEY="same-as-frontend-auth-key"
+AUTH_KEY="your-api-auth-key"
 
 # Email Configuration (for verification)
 EMAIL_SERVER_USER="your-email@gmail.com"
 EMAIL_SERVER_PASSWORD="your-app-password"
 EMAIL_SERVER_HOST="smtp.gmail.com"
 EMAIL_SERVER_PORT="465"
-EMAIL_FROM="RestauNax Support <your-email@gmail.com>"
+EMAIL_FROM="RestaunaX Support <your-email@gmail.com>"
 
-# Application
-CORS_ORIGIN="http://localhost:3000" # Your frontend URL
+# Application Security
+CORS_ORIGIN="*" # Configure specific origins for production
 
 # Development
 DEBUG="true"
 ```
 
 ### Important Notes
-- `AUTH_KEY` must match the frontend's `NEXT_PUBLIC_AUTH_KEY` exactly
-- `CORS_ORIGIN` should be your frontend URL
+- Use strong `JWT_SECRET` and `AUTH_KEY` values in production
+- Configure specific `CORS_ORIGIN` domains for production security
 - Use app passwords for email providers, not regular passwords
 
 ## 🛠️ Development Commands
@@ -119,6 +117,8 @@ npm run studio       # Open Prisma Studio
 ```
 
 ## 🔌 API Endpoints
+
+All endpoints require the `x-api-key` header with your `AUTH_KEY` value.
 
 ### Authentication
 - `POST /api/auth/register` - User registration
@@ -142,14 +142,14 @@ npm run studio       # Open Prisma Studio
 - `PATCH /api/orders/:id` - Update order
 - `DELETE /api/orders/:id` - Delete order
 
-### Development
+### System
 - `GET /api/health` - Health check
 - `POST /api/dev/reset-db` - Reset database with seed data (dev only)
 
 ## 🔐 Authentication & Security
 
 ### API Key Authentication
-All endpoints require authentication via:
+All endpoints require authentication via header:
 ```http
 x-api-key: your-auth-key-here
 ```
@@ -161,10 +161,10 @@ User sessions are managed with JWT tokens containing:
 - Expiration time
 
 ### CORS Protection
-Configure `CORS_ORIGIN` to restrict frontend origins.
+Configure `CORS_ORIGIN` to restrict client origins in production.
 
 ### Input Validation
-All endpoints use Joi validation for request data.
+All endpoints use Joi validation for request data security.
 
 ## 🗄️ Database Schema
 
@@ -203,9 +203,9 @@ CMD ["npm", "start"]
 
 ### Environment Setup
 - Set `NODE_ENV=production`
-- Use strong `JWT_SECRET`
+- Use strong `JWT_SECRET` and `AUTH_KEY`
 - Configure production database
-- Set up proper CORS origins
+- Set specific CORS origins
 - Use secure email credentials
 
 ### Monitoring
@@ -223,7 +223,15 @@ curl -X POST http://localhost:8081/api/dev/reset-db \
 ```
 
 ### API Testing
-Use tools like Postman or curl to test endpoints. All requests require the `x-api-key` header.
+Use tools like Postman, Insomnia, or curl to test endpoints. All requests require the `x-api-key` header.
+
+Example user registration:
+```bash
+curl -X POST http://localhost:8081/api/auth/register \
+  -H "Content-Type: application/json" \
+  -H "x-api-key: your-auth-key" \
+  -d '{"email":"test@example.com","password":"password123","name":"Test User"}'
+```
 
 ## 🔧 Troubleshooting
 
@@ -244,10 +252,10 @@ Use tools like Postman or curl to test endpoints. All requests require the `x-ap
 - Check firewall blocking email ports
 - Test with a simple email provider first
 
-**Frontend Connection Issues**
-- Verify CORS_ORIGIN matches frontend URL
-- Check AUTH_KEY matches frontend configuration
-- Ensure server is running on correct port
+**API Authentication Issues**
+- Verify `x-api-key` header is included
+- Check AUTH_KEY environment variable
+- Ensure CORS_ORIGIN allows your client domain
 
 ## 📚 Tech Stack
 
