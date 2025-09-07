@@ -210,6 +210,10 @@ For production or when you need separate backend services.
    NEXTAUTH_URL="http://localhost:3000"
    ```
 
+   ##### Frontend **NEXT_PUBLIC_AUTH_KEY** and Backend **AUTH_KEY** need to be the exact same to work.
+
+   ##### Should have created as token system but didnt have time
+
 3. **Start Frontend**
    ```bash
    npm run dev
