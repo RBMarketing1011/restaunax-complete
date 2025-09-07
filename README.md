@@ -113,6 +113,7 @@ EMAIL_FROM="RestauNax Support <your-email@gmail.com>"
 ---
 
 ### 🌱 Seeding Database
+###### Only allowed in development - NEXT_PUBLIC_NODE_ENV="development"
 - sign up, verify email, log in
 - once logged in navigate to /profile or click user info in bottom of sidebar and select profile on popup
 - scroll down to "Account Management" section
