@@ -143,7 +143,7 @@ For production or when you need separate backend services.
    cp .env.example .env
    ```
    
-   Edit `backend/.env`:
+   Edit `backend/.env`: - see "Email Setup (SMTP)" &  "Environment Variables" **ABOVE** before launching
    ```env
    # Environment Configuration
    NODE_ENV="development"
